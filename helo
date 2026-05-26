@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Social</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    overflow:hidden;
+}
+
+/* VIDEO / ẢNH NỀN */
+.bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url('anh1.jpg') center/cover no-repeat;
+    z-index:-2;
+}
+
+/* LỚP MỜ */
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+    z-index:-1;
+}
+
+/* TRANG 1 */
+.page1{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.touch-btn{
+    padding:20px 55px;
+    border:none;
+    border-radius:60px;
+    font-size:34px;
+    color:white;
+    cursor:pointer;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 0 25px rgba(255,255,255,0.5);
+
+    transition:0.3s;
+}
+
+.touch-btn:hover{
+    transform:scale(1.08);
+}
+
+/* TRANG 2 */
+.page2{
+    width:100%;
+    height:100vh;
+    display:none;
+
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+background:url('anh2.jpg') center/cover no-repeat;
+}
+
+.title{
+    color:white;
+    font-size:42px;
+    margin-bottom:40px;
+    text-shadow:0 0 15px rgba(255,255,255,0.8);
+}
+
+.socials{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.socials a{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:35px;
+    color:white;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(8px);
+
+    box-shadow:0 0 15px rgba(255,255,255,0.4);
+
+    transition:0.3s;
+}
+
+.socials a:hover{
+    transform:translateY(-10px) scale(1.1);
+    box-shadow:0 0 25px white;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ẢNH NỀN -->
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- NHẠC -->
+<audio id="music" loop>
+    <source src="nha1.mp3" type="audio/mp3">
+</audio>
+
+<!-- TRANG 1 -->
+<div class="page1" id="page1">
+
+    <button class="touch-btn" onclick="openPage2()">
+        Chạm đây ạ 💖
+    </button>
+
+</div>
+
+<!-- TRANG 2 -->
+<div class="page2" id="page2">
+
+    <div class="title">Follow Me ✨</div>
+
+    <div class="socials">
+
+        <!-- FACEBOOK -->
+        <a href="https://www.facebook.com/share/14fvebG2Eph/" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+      
+
+        <!-- TIKTOK -->
+        <a href="https://www.tiktok.com/@huy.loi6?_r=1&_t=ZS-96goWmL3sX6" target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+        <!-- ZALO -->
+        <a href="http://zaloapp.com/qr/p/fdb0rb5x3ymp" target="_blank">
+            <i class="fas fa-comment"></i>
+        </a>
+
+        <!-- LOCKET -->
+        <a href="https://locket.cam/huyloi0510"_blank">
+            <i class="fas fa-heart"></i>
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+function openPage2(){
+
+    document.getElementById("page1").style.display="none";
+    document.getElementById("page2").style.display="flex";
+
+    // PHÁT NHẠC
+    document.getElementById("music").play();
+
+}
+
+</script>
+
+</body>
+</html>
